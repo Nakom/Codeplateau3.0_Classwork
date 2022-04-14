@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'CodeplateauController@home');
+Route::get('/home', 'CodeplateauController@home')->name('home');
 
 Route::get('/create', 'CodeplateauController@create');
 
@@ -30,3 +30,18 @@ Route::get('/name/{id}/delete', 'CodeplateauController@delete')->name('delete');
 Route::get('/name/{id}/edit', 'CodeplateauController@edit')->name('edit');
 
 Route::post('/update', 'CodeplateauController@update')->name('update');
+
+Route::get('/register', 'UserController@register')->name('register');
+
+Route::post('/register', 'UserController@storeuser')->name('storeuser');
+
+Route::get('/login', 'UserController@getLogin')->name('login');
+
+Route::post('/login', 'UserController@postLogin')->name('postLogin');
+
+Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
+
+
+
+
+
